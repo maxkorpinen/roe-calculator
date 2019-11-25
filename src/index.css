@@ -12,10 +12,23 @@ code {
 
 h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
   font-weight: 200;
 }
 
 p {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.19);
+  color: white;
+  border: 2px solid grey;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   font-family: 'Ubuntu Mono', monospace;
 }
