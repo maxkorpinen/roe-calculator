@@ -4,7 +4,7 @@ export default class Calculator extends Component {
 
     state = {
         totalPrice: "",
-        roe: ""
+        roe: "7.3"
     }
 
     render() {
@@ -26,7 +26,7 @@ export default class Calculator extends Component {
                 </div>
 
                 <div>
-                    <h2>Oman pääoman tuotto: <b>7.6%</b></h2>
+                    <h2>Oman pääoman tuotto: <b className="roePer">{this.state.roe}%</b></h2>
                 </div>
             </div>
         )
