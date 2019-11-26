@@ -50,8 +50,8 @@ export default class Calculator extends Component {
     }
 
     calculateRoe() {
-
-        // Calculating the yearly costs/profits
+        // Return on Equity = Net Income / Average Shareholders' Equity
+        // Calculating costs/profits
         const totalValue = this.state.totalValue; // property value in €
         const ownMoney = this.state.ownEquity; // how much own money is in the property
         const loanMoney = totalValue - ownMoney; // how much loan money is in the property
@@ -61,6 +61,7 @@ export default class Calculator extends Component {
         const costs = this.state.monthlyCost; // the monthly costs of keeping the property in €
         const rent = this.state.monthlyRent; // the monthly rent income in €
 
+        // RoE
         let roe = ((( rent - costs ) * 12 ) - interest) / ownMoney * 100;
         roe = Math.round( roe * 10 ) / 10; // rounding up to 1 decimal
 
@@ -81,12 +82,12 @@ export default class Calculator extends Component {
 
                 <div className="calculatorForm">
                     <h3 className="alignLeft"><b>Asunnon tiedot</b></h3>
-                    <p>Asunnon kokonaisarvo: <input name="totalValue" placeholder="€" onChange={this.handleInputChange}></input></p>
-                    <p>Vastikkeet yhteensä: <input name="monthlyCost" placeholder="€/kk" onChange={this.handleInputChange}></input></p>
+                    <p>Asunnon kokonaisarvo: <input name="totalValue" placeholder="€" onChange={this.handleInputChange} required></input></p>
+                    <p>Vastikkeet yhteensä: <input name="monthlyCost" placeholder="€/kk" onChange={this.handleInputChange} required></input></p>
 
                     <h3 className="alignLeft"><b>Rahoitus</b></h3>
-                    <p>Vuokra: <input name="monthlyRent" placeholder="€/kk" onChange={this.handleInputChange}></input></p>
-                    <p>Oman pääoman osuus: <input name="ownEquity" placeholder="€" onChange={this.handleInputChange}></input></p>
+                    <p>Vuokra: <input name="monthlyRent" placeholder="€/kk" onChange={this.handleInputChange} required></input></p>
+                    <p>Oman pääoman osuus: <input name="ownEquity" placeholder="€" onChange={this.handleInputChange} required></input></p>
                     <p>Lainan vuosikorko: <input name="morgageInterest" placeholder="%" onChange={this.handleInputChange}></input></p>
                     <button onClick={this.handleSubmit}>Laske</button>
                 </div>

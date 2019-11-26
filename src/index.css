@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #00d8ff, rgb(247, 0, 228));
+  background: linear-gradient(to right, #414241, #1fd3d3);
 }
 
 code {
@@ -31,4 +31,8 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   font-family: 'Ubuntu Mono', monospace;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.486);
 }
